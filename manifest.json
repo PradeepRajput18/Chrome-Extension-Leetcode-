@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Leetcode bot",
+    "version": "1.0",
+    "description": "A chatbot extension for Leetcode using Gemini API.",
+    "permissions": ["storage", "activeTab"],
+    "host_permissions": ["https://leetcode.com/*"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://leetcode.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+}
